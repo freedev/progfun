@@ -1,8 +1,7 @@
 package week01
 
-object permutate {
-  val list = List(1, 2, 3, 4)                     //> list  : List[Int] = List(1, 2, 3, 4)
- 
+object combinations {
+
       def combinations(coins: List[Int]): List[List[Int]] = {
          def loop(start: Int, pos: Int, combs: List[List[Int]]): List[List[Int]] = {
            if (pos < coins.size) {
@@ -17,9 +16,8 @@ object permutate {
          }
          loop(0, 0, List())
       }                                           //> combinations: (coins: List[Int])List[List[Int]]
-
   
-  combinations(list)                              //> res0: List[List[Int]] = List(List(1), List(1, 2), List(1, 2, 3), List(1, 2, 
+  combinations(List(1, 2, 3, 4))                  //> res0: List[List[Int]] = List(List(1), List(1, 2), List(1, 2, 3), List(1, 2, 
                                                   //| 3, 4), List(2), List(2, 3), List(2, 3, 4), List(3), List(3, 4), List(4))
   
 //  (1 to list.length).flatMap {
