@@ -1,12 +1,17 @@
 package week01
 
+import scala.annotation.tailrec
+
 object factorial {
 
-  def factorial(n: Int): Int = {
-      def tailFactorial(s: Int, n: Int): Int =
-        if (n > 0) tailFactorial(s * n, n -1) else s
-      tailFactorial(1, n)
-  }                                               //> factorial: (n: Int)Int
+  @tailrec
+  def factorial2(n: Int): Int = {
+      if (n == 0)
+	      1
+	    else
+	      factorial2(n * (n - 1))
+  }
 
-  factorial(5)                                    //> res0: Int = 120
+  factorial2(5)
+  factorial2(3)
 }
